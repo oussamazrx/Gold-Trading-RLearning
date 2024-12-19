@@ -29,3 +29,32 @@ You can install the required packages using `pip`:
 ```bash
 pip install tensorflow numpy torch
 ```
+
+## Desription
+``agent.py`` (TensorFlow/Keras)
+- This script implements the stock trading agent using TensorFlow/Keras.
+- It defines a neural network using the Sequential API from Keras.
+- The agent learns from stock price data by interacting with the environment and using experience replay to train the model.
+- The model is trained using Adam optimizer and Mean Squared Error (MSE) loss function.
+- The agent learns a policy by deciding whether to buy, sell, or hold based on the historical price data.
+- 
+``agent2.py`` (PyTorch)
+- This script implements the stock trading agent using PyTorch.
+- It defines the neural network model using the nn.Module class, offering more flexibility compared to the Keras model.
+- The agent's training logic involves calculating the Q-values, performing gradient descent using the Adam optimizer, and updating the model using backpropagation.
+- The agent also uses experience replay to train the model and makes decisions based on historical data.
+
+
+## Usage
+To run the stock trading simulation:
+
+- Place your stock data in the data/ folder in CSV format. The CSV file should contain historical stock data with the closing prices (preferably in the 5th column).
+- Modify the stock_name variable in both agent.py and agent2.py to the name of your stock data file (without the .csv extension).
+- Adjust other parameters such as window_size and episode_count to control the length of the training process.
+- Run either agent.py or agent2.py to start the simulation.
+For example, running agent.py:
+
+```bash
+python agent.py
+```
+The agent will begin training using TensorFlow and will save the model at specified intervals (e.g., after every 10 episodes).
