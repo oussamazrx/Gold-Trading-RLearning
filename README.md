@@ -55,6 +55,6 @@ To run the stock trading simulation:
 For example, running agent.py:
 
 ```bash
-python agent.py
+python agent2.py
 ```
 The agent will begin training using TensorFlow and will save the model at specified intervals (e.g., after every 10 episodes).
